@@ -1,0 +1,254 @@
+{
+  "main": {
+    "name": "Ernesto Valdez",
+    "description": "Sr. Mobile Developer (Native, Flutter, React Native, Xamarin)",
+    "image": "15321975906209479.jpg",
+    "bio": "Mi experiencia tiene base en el diseño End-To-End de productos tecnológicos de alto impacto a través de la investigación e implementación de nuevas tecnologías como el internet de las cosas (IoT), aplicaciones moviles, cómputo en la nube, diseño de electrónica SMD, desarrollo de firmware embebido y software fullstack en tecnologías .Net y open source.",
+    "contactmessage": "Here is where you should write your message to readers to have them get in contact with you.",
+    "email": "ernestovm07@gmail.com",
+    "phone": "55 1682 3244",
+    "github": "https://github.com/ernest0vm",
+    "address": {
+      "street": "_",
+      "city": "San Ildefonso",
+      "state": "Estado de México",
+      "zip": "54470"
+    },
+    "website": "_",
+    "resumedownload": "https://www.dropbox.com/s/4kw1r5n5zc533q4/cv-ernestovm_ernestovm07%40gmail.com.pdf?dl=1",
+    "social": [
+      {
+        "name": "facebook",
+        "url": "https://www.facebook.com/ErNesT0VM",
+        "className": "fab fa-facebook"
+      },
+      {
+        "name": "twitter",
+        "url": "http://www.twitter.com/ernestovm",
+        "className": "fab fa-twitter"
+      },
+      {
+        "name": "linkedin",
+        "url": "https://www.linkedin.com/in/ernestovaldez/",
+        "className": "fab fa-linkedin"
+      },
+      {
+        "name": "behance",
+        "url": "https://www.behance.net/ernestovm",
+        "className": "fab fa-behance"
+      },
+      {
+        "name": "github",
+        "url": "https://github.com/ernest0vm",
+        "className": "fab fa-github"
+      },
+      {
+        "name": "whatsapp",
+        "url": "https://api.whatsapp.com/send?phone=+525516823244",
+        "className": "fab fa-whatsapp"
+      }
+    ]
+  },
+  "resume": {
+    "skillsMessage": "Estos son algunos de los lenguajes, frameworks y librerias que utilizo en mis proyectos:",
+    "toolsMessage": "Estas son algunas de las herramientas con las cuales he desarrollado varios proyectos a traves de 10 años de experiencia:",
+    "education": [
+      {
+        "school": "Universidad Tecnológica Fidel Velázquez",
+        "degree": "T.S.U. Mecatronica",
+        "graduated": "Agosto 2009",
+        "description": "Aprendí la capacidad de aplicar tecnologías especializadas (robots, tornos de control numérico, controladores lógicos programables, computadoras industriales) para la implementación de soluciones de automatización parcial o total en sistemas de manufactura, garantizando su operación segura, así como la  eficacia de sus procesos industriales."
+      },
+      {
+        "school": "Colegio de Estudios Cientificos y Tecnologicos del Estado de México",
+        "degree": "Tecnico en Informatica Administrativa",
+        "graduated": "Julio 2006",
+        "description": "Aprendí a proponer soluciones de sistemas de información y bases de datos, así como asimilar la aplicación de nuevos desarrollos tecnológicos en las áreas administrativas, evaluar su implementación en la organización donde se desempeñen, apoyando a la toma de desiciones de los ejecutivos y al desarrollo del sector productivo y social del país."
+      }
+    ],
+    "work": [
+      {
+        "company": "Bussi Mobility",
+        "title": "Flutter Mobile Developer",
+        "years": "Octubre 2019 - Marzo 2020",
+        "description": "Desarrollo y mantenimiento de Apps BUSSI y BUSSI Driver, Desarrollo de Aplicaciones Cross-Platform (Flutter), Uso de lenguajes Dart, Swift, Java, Kotlin, Manejo de GraphQL, Redux, Fastlane, Firebase, WebSockets, Despliegue de aplicaciones en Google Play Store y Apple App Store."
+      },
+      {
+        "company": "Grupo CAN&T",
+        "title": "Sr. Mobile App Developer",
+        "years": "Enero 2019 - Octubre 2019",
+        "description": "Desarrollo de Aplicaciones Moviles en Cross Platform (Xamarin Forms & React Native), Soporte a las aplicaciones de FamilyCard, MediChat y Multidoctores, Diseño de interfaces UI/UX, Programación con leguajes .Net, JS, Java y Objetive-C, Cross Platform iOS, Android, UWP, Despliegue de aplicaciones en Google Play Store y Apple App Store, Manejo de Microsoft Azure para operacion de aplicaciones."
+      },
+      {
+        "company": "SkyAlert de Mexico",
+        "title": "IoT Enginner / Production Lead",
+        "years": "Julio 2017 - Enero 2019",
+        "description": "En SkyAlert trabajé como desarrollador de hardware y software utilizando las tecnologías más innovadoras, como el internet de las cosas (IoT), infraestructuras basadas en la nube, datos analíticos, así como el desarrollo de herramientas para el estudio sísmico, aplicadas en la red sísmica de SkyAlert (Red SkyAlert) y en la evolución de los dispositivos de prevención EPICENTER. Así mismo me encargo de los esfuerzos para lograr el abastecimiento de los dispositivos para clientes comerciales y corporativos, desarrollando herramientas para hacer más eficiente la producción y planificación de recursos de manufactura."
+      },
+      {
+        "company": "Service Management Solutions",
+        "title": "Motherboard Enginner",
+        "years": "Junio 2017 - Julio 2017",
+        "description": "Ocupaba el puesto de MotherBoard Enginner de Nivel 3, reparando Motherboards de laptop y All in One de la marca HP y Asus a nivel componente de montaje superficial BGA, QFN, SOD, SOT, mediante herramientas especializadas para dicho fin, diagnosticando fallas y ejecutando soluciones para los fallos que existan en los productos de garantía comercial y empresarial, control de calidad, revisión y testeo de dispositivos electrónicos nuevos y retorno a campo de dispositivos electrónicos funcionales."
+      },
+      {
+        "company": "Grupo Avatecsys",
+        "title": "Head of Technology",
+        "years": "Septiembre 2009 - Marzo 2017",
+        "description": "Ejercí el puesto de Gerente de Tecnología en Grupo Avatecsys S.A. diseñando y planeando los proyectos que requieren implementar soluciones mediante dispositivos electrónicos automatizados o controlados remotamente en procesos de producción, seguridad, prevención de desastres y protección civil, dando como resultado la patente MX311249B del Sistema de Alerta Temprano Integral Sísmico, entre otras actividades como manejo de equipos de trabajo, administración de redes de voz y datos, soporte técnico a computadoras, capacitación de personal, atención a clientes, soporte a ventas, reparación de dispositivos electrónicos, inventarios, diseño de planos de instalación de sistemas de seguridad, diseño de página web y diseño de publicidad."
+      }
+    ],
+    "skills": [
+      {
+        "name": "Python",
+        "imageUrl": "https://www.sololearn.com/Icons/Courses/1073.png",
+        "certificationUrl": "https://www.sololearn.com/Certificate/1073-1163660/pdf/"
+      },
+      {
+        "name": "Ruby",
+        "imageUrl": "https://www.sololearn.com/Icons/Courses/1081.png",
+        "certificationUrl": "https://www.sololearn.com/Certificate/1081-1163660/pdf/"
+      },
+      {
+        "name": "C++",
+        "imageUrl": "https://www.sololearn.com/Icons/Courses/1051.png",
+        "certificationUrl": "https://www.sololearn.com/Certificate/1051-1163660/pdf/"
+      },
+      {
+        "name": "Swift",
+        "imageUrl": "https://www.sololearn.com/Icons/Courses/1075.png",
+        "certificationUrl": "https://www.sololearn.com/Certificate/1075-1163660/pdf/"
+      },
+      {
+        "name": "PHP",
+        "imageUrl": "https://www.sololearn.com/Icons/Courses/1059.png",
+        "certificationUrl": "https://www.sololearn.com/Certificate/1059-1163660/pdf/"
+      },
+      {
+        "name": "JQuery",
+        "imageUrl": "https://www.sololearn.com/Icons/Courses/1082.png",
+        "certificationUrl": "https://www.sololearn.com/Certificate/1082-1163660/pdf/"
+      },
+      {
+        "name": "JavaScript",
+        "imageUrl": "https://www.sololearn.com/Icons/Courses/1024.png",
+        "certificationUrl": "https://www.sololearn.com/Certificate/1024-1163660/pdf/"
+      },
+      {
+        "name": "CSS",
+        "imageUrl": "https://www.sololearn.com/Icons/Courses/1023.png",
+        "certificationUrl": "https://www.sololearn.com/Certificate/1023-1163660/pdf/"
+      },
+      {
+        "name": "SQL",
+        "imageUrl": "https://www.sololearn.com/Icons/Courses/1060.png",
+        "certificationUrl": "https://www.sololearn.com/Certificate/1060-1163660/pdf/"
+      },
+      {
+        "name": "HTML",
+        "imageUrl": "https://www.sololearn.com/Icons/Courses/1014.png",
+        "certificationUrl": "https://www.sololearn.com/Certificate/1014-1163660/pdf/"
+      },
+      {
+        "name": "Java",
+        "imageUrl": "https://www.sololearn.com/Icons/Courses/1068.png",
+        "certificationUrl": "https://www.sololearn.com/Certificate/1068-1163660/pdf/"
+      },
+      {
+        "name": "C#",
+        "imageUrl": "https://www.sololearn.com/Icons/Courses/1080.png",
+        "certificationUrl": "https://www.sololearn.com/Certificate/1080-1163660/pdf/"
+      }
+    ],
+    "tools": [
+      {
+        "name": "Visual Studio",
+        "logo": "https://visualstudio.microsoft.com/wp-content/uploads/2019/02/VSWinIcon_100x.png"
+      },
+      {
+        "name": "Visual Studio Code",
+        "logo": "https://cdn.worldvectorlogo.com/logos/visual-studio-code-1.svg"
+      },
+      {
+        "name": "Android Studio",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Android_Studio_icon.svg/1200px-Android_Studio_icon.svg.png"
+      },
+      {
+        "name":"XCode",
+        "logo":"https://benjagarrido.com/wp-content/uploads/2019/12/xcode_logo.png"
+      },
+      {
+        "name": "Postman",
+        "logo": "https://upload-icon.s3.us-east-2.amazonaws.com/uploads/icons/png/16475775581551942134-512.png"
+      },
+      {
+        "name":"Azure Data Studio",
+        "logo":"https://static.macupdate.com/products/62342/m/azure-data-studio-logo.png?v=1587492208"
+      },
+      {
+        "name":"Adobe XD",
+        "logo":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Adobe_XD_CC_icon.svg/1050px-Adobe_XD_CC_icon.svg.png"
+      },
+      {
+        "name":"Adobe Photoshop",
+        "logo":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Adobe_Photoshop_Express_logo.svg/1200px-Adobe_Photoshop_Express_logo.svg.png"
+      },
+      {
+        "name":"Git",
+        "logo":"https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png"
+      },
+      {
+        "name":"Firebase",
+        "logo":"https://www.outsystems.com/forgeCore/rest/ComponentThumbnail/GetURL_ComponentThumbnail?ProjectImageId=26967"
+      },
+      {
+        "name":"Azure",
+        "logo":"https://www.solarwinds.com/-/media/solarwinds/swdcv2/licensed-products/service-desk/integrations/sd-integrations-logo-azure.ashx?la=es&rev=feba5207a01d49a68bd35e33b36a8c33&hash=DE4DF2FC18D0E4518228094B1DED672998C72E76"
+      },
+      {
+        "name":"Google Cloud",
+        "logo":"data:image/png;base64,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"
+      }
+    ]
+  },
+  "portfolio": {
+    "projects": [
+      {
+        "title": "Bussi Mobility App (Flutter/Dart)",
+        "category": "Aplicacion movil para reservar asientos de transporte privado.",
+        "image": "https://mir-cdn.behance.net/v1/rendition/project_modules/max_1200/1bd5d397273273.5ec17c61f24a0.png",
+        "url": "https://www.behance.net/gallery/97273273/Bussi-Mobility-App"
+      },
+      {
+        "title": "Agencita Mobile UI/UX desing (Xamarin Forms)",
+        "category": "Aplicacion movil para agenda de citas medicas.",
+        "image": "https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/ba828781543235.5d02745ad937e.png",
+        "url": "https://www.behance.net/gallery/81543235/Agencita-Mobile-UIUX-Desing"
+      },
+      {
+        "title": "FamilyCard Mobile (Xamarin Forms)",
+        "category": "Aplicacion de produccion de Familycard.",
+        "image": "https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/79da9981160171.5d029aa195d74.png",
+        "url": "https://www.behance.net/gallery/81160171/FamilyCard-Mobile-UIUX-Design"
+      },
+      {
+        "title": "FamilyCard Mobile Prototype (React Native)",
+        "category": "Prototipo funcional para migracion de Familycard de Xamarin Forms a React Native.",
+        "image": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/e2670282129369.5d8be2fd01b69.png",
+        "url": "https://www.behance.net/gallery/82129369/FamilyCard-Mobile-UIUX-Design-in-React-Native"
+      },
+      {
+        "title": "Ecobici Technical Test (Kotlin)",
+        "category": "Examen tecnico; consume datos JSON, los enlista y muestra un filtro de acuerdo a tu ubicacion.",
+        "image": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/0c585697271807.5ec173e17a120.png",
+        "url": "https://www.behance.net/gallery/97271807/Ecobici-Mobile-App-%28AndroidKotlin%29"
+      },
+      {
+        "title": "Ecobici Technical Test (Flutter/Dart)",
+        "category": "Examen tecnico; consume datos JSON, los enlista y muestra un filtro de acuerdo a tu ubicacion.",
+        "image": "https://mir-cdn.behance.net/v1/rendition/project_modules/max_1200/2bb78897272101.5ec1766ddbedd.png",
+        "url": "https://www.behance.net/gallery/97272101/Ecobici-Mobile-App-%28FlutterDart%29"
+      }
+    ]
+  }
+}

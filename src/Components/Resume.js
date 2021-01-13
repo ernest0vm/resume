@@ -30,63 +30,69 @@ class Resume extends Component {
       var skills = this.props.data.skills.map((skills) => {
         return (
           <div className="three columns">
-            <a href={skills.certificationUrl}><img src={skills.imageUrl} alt={skills.name} style={{ width: 100, height: 100, borderRadius:100 }} /></a>
+            <a href={skills.certificationUrl}><img src={skills.imageUrl} alt={skills.name} style={{ width: 100, height: 100, borderRadius: 100 }} /></a>
           </div>
         )
       })
       var tools = this.props.data.tools.map((tools) => {
         return (
           <div className="three columns">
-            <img src={tools.logo} alt={tools.name} style={{ width: 90, height: 90, margin:10 }} />
+            <img src={tools.logo} alt={tools.name} style={{ width: 90, height: 90, margin: 10 }} />
           </div>
         )
       })
     }
 
     return (
-      <section id="resume">
+      <div id='resume'>
 
-        <div id='education' className="row education">
-          <div className="three columns header-col">
-            <h1><span>Educación</span></h1>
-          </div>
+        <section id='education'>
+          <div className="row education">
+            <div className="three columns header-col">
+              <h1><span>Educación</span></h1>
+            </div>
 
-          <div className="nine columns main-col">
-            <div className="row item">
-              <div className="twelve columns">
-                {education}
+            <div className="nine columns main-col">
+              <div className="row item">
+                <div className="twelve columns">
+                  {education}
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        </section>
 
-        <div id='work' className="row work">
+        <section id='work'>
+          <div className="row work">
 
-          <div className="three columns header-col">
-            <h1><span>Empleos</span></h1>
+            <div className="three columns header-col">
+              <h1><span>Empleos</span></h1>
+            </div>
+
+            <div className="nine columns main-col">
+              {work}
+            </div>
           </div>
+        </section>
 
-          <div className="nine columns main-col">
-            {work}
+        <section id='skills'>
+          <div className="row skills">
+
+            <div className="three columns header-col">
+              <h1><span>Habilidades</span></h1>
+            </div>
+
+            <div className="nine columns main-col">
+
+              <p>{skillsMessage}
+              </p>
+
+              <span>
+                {skills}
+              </span>
+            </div>
           </div>
-        </div>
-
-        <div id='skills' className="row skills">
-
-          <div className="three columns header-col">
-            <h1><span>Habilidades</span></h1>
-          </div>
-
-          <div className="nine columns main-col">
-
-            <p>{skillsMessage}
-            </p>
-
-            <span>
-            {skills}
-            </span>
-          </div>
-        </div>
+        </section>
 
         <div className="row tools">
 
@@ -100,12 +106,12 @@ class Resume extends Component {
             </p>
 
             <div>
-            {tools}
+              {tools}
             </div>
           </div>
         </div>
 
-      </section>
+      </div>
     );
   }
 }

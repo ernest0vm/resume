@@ -1,0 +1,113 @@
+---
+const { data } = Astro.props;
+const skillsMessage = data?.skillsMessage;
+const toolsMessage = data?.toolsMessage;
+const education = data?.education ?? [];
+const work = data?.work ?? [];
+const skills = data?.skills ?? [];
+const tools = data?.tools ?? [];
+---
+
+<div id="resume">
+  <section id="education">
+    <div class="row education">
+      <div class="three columns header-col">
+        <h1><span>Educación</span></h1>
+      </div>
+
+      <div class="nine columns main-col">
+        <div class="row item">
+          <div class="twelve columns">
+            {
+              education.map((item) => (
+                <div>
+                  <h3>{item.school}</h3>
+                  <p class="info">
+                    {item.degree} <span>&bull;</span>
+                    <em class="date">{item.graduated}</em>
+                  </p>
+                  <p>{item.description}</p>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="row work">
+      <div class="three columns header-col">
+        <h1><span>Empleos</span></h1>
+      </div>
+
+      <div class="nine columns main-col">
+        {
+          work.map((job) => (
+            <div>
+              <h3>{job.company}</h3>
+              <p class="info">
+                {job.title}
+                <span>&bull;</span> <em class="date">{job.years}</em>
+              </p>
+              <p>{job.description}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="row skills">
+      <div class="three columns header-col">
+        <h1><span>Habilidades</span></h1>
+      </div>
+
+      <div class="nine columns main-col">
+        <p>{skillsMessage}</p>
+
+        <span>
+          {
+            skills.map((skill) => (
+              <div class="three columns">
+                <a href={skill.certificationUrl}>
+                  <img
+                    src={skill.imageUrl}
+                    alt={skill.name}
+                    style="width: 100px; height: 100px; border-radius: 100px;"
+                  />
+                </a>
+              </div>
+            ))
+          }
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <div class="row tools">
+    <div class="three columns header-col">
+      <h1><span>Herramientas</span></h1>
+    </div>
+
+    <div class="nine columns main-col">
+      <p>{toolsMessage}</p>
+
+      <div>
+        {
+          tools.map((tool) => (
+            <div class="three columns">
+              <img
+                src={tool.logo}
+                alt={tool.name}
+                style="width: 90px; height: 90px; margin: 10px;"
+              />
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</div>

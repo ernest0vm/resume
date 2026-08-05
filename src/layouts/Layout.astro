@@ -1,0 +1,46 @@
+---
+const base = import.meta.env.BASE_URL.replace(/\/+$/, '');
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="theme-color" content="#000000" />
+    <link rel="manifest" href={`${base}/manifest.json`} />
+    <link rel="shortcut icon" href={`${base}/favicon.ico`} />
+    <link rel="stylesheet" href={`${base}/css/default.css`} />
+    <link rel="stylesheet" href={`${base}/css/layout.css`} />
+    <link rel="stylesheet" href={`${base}/css/media-queries.css`} />
+    <link rel="stylesheet" href={`${base}/css/magnific-popup.css`} />
+
+    <title>Ernesto Valdez</title>
+  </head>
+
+  <body>
+    <slot />
+
+    <script is:inline>
+      // Unregister the service worker left behind by the old CRA build so
+      // returning visitors don't get stuck on a cached version of the site.
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.getRegistrations().then((registrations) => {
+          registrations.forEach((registration) => registration.unregister());
+        });
+      }
+    </script>
+
+    <script is:inline src={`${base}/js/jquery-1.10.2.min.js`}></script>
+    <script is:inline src={`${base}/js/jquery-migrate-1.2.1.min.js`}></script>
+
+    <script is:inline src={`${base}/js/jquery.flexslider.js`}></script>
+    <script is:inline src={`${base}/js/waypoints.js`}></script>
+    <script is:inline src={`${base}/js/jquery.fittext.js`}></script>
+    <script is:inline src={`${base}/js/magnific-popup.js`}></script>
+    <script is:inline src={`${base}/js/init.js`}></script>
+  </body>
+</html>

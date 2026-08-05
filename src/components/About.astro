@@ -1,0 +1,52 @@
+---
+const { data } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/+$/, '');
+const name = data?.name;
+const profilepic = `${base}/images/${data?.image}`;
+const bio = data?.bio;
+const city = data?.address?.city;
+const state = data?.address?.state;
+const phone = data?.phone;
+const email = data?.email;
+const resumeDownload = data?.resumedownload;
+---
+
+<section id="about">
+  <div class="row">
+    <div class="three columns">
+      <img class="profile-pic" src={profilepic} alt={`Foto de ${name}`} />
+    </div>
+    <div class="nine columns main-col">
+      <h2>Acerca de mi</h2>
+
+      <p>{bio}</p>
+      <div class="row">
+        <div class="columns contact-details">
+          <h2>Detalles de Contacto</h2>
+          <p class="address">
+            <i class="fa fa-user"></i>
+            <span>{name}</span>
+            <br />
+            <span>
+              <i class="fa fa-map-marker"></i>
+              {city}, {state}
+            </span>
+            <br />
+            <i class="fa fa-phone"></i>
+            <span>{phone}</span>
+            <br />
+            <i class="fa fa-envelope"></i>
+            <span>{email}</span>
+          </p>
+        </div>
+        <div class="columns download">
+          <p>
+            <a href={resumeDownload} target="_blank" class="button">
+              <i class="fa fa-download"></i>Descargar Curriculum
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -29,14 +29,14 @@ class Resume extends Component {
       })
       var skills = this.props.data.skills.map((skills) => {
         return (
-          <div className="three columns">
+          <div key={skills.name} className="three columns">
             <a href={skills.certificationUrl}><img src={skills.imageUrl} alt={skills.name} style={{ width: 100, height: 100, borderRadius: 100 }} /></a>
           </div>
         )
       })
       var tools = this.props.data.tools.map((tools) => {
         return (
-          <div className="three columns">
+          <div key={tools.name} className="three columns">
             <img src={tools.logo} alt={tools.name} style={{ width: 90, height: 90, margin: 10 }} />
           </div>
         )

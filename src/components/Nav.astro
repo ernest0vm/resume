@@ -1,0 +1,95 @@
+---
+const links = [
+  { href: '#home', label: 'Inicio' },
+  { href: '#about', label: 'Acerca de' },
+  { href: '#education', label: 'Educación' },
+  { href: '#work', label: 'Empleos' },
+  { href: '#skills', label: 'Habilidades' },
+  { href: '#portfolio', label: 'Portafolio' },
+];
+---
+
+<header class="fixed inset-x-0 top-0 z-50 flex justify-center px-4 pt-4">
+  <nav
+    id="site-nav"
+    aria-label="Principal"
+    class="glass w-full max-w-3xl rounded-full transition-all duration-300"
+  >
+    <!-- w-max + mx-auto centres the list when it fits and lets it scroll from
+         its true start when it doesn't; `justify-center` alone would clip the
+         first item out of reach on narrow screens. -->
+    <div class="scrollbar-none overflow-x-auto">
+      <ul class="mx-auto flex w-max items-center gap-1 px-2 py-2">
+        {
+          links.map((link) => (
+            <li>
+              <a
+                href={link.href}
+                data-nav-link
+                class="block rounded-full px-3.5 py-1.5 text-[0.8rem] font-semibold tracking-wide whitespace-nowrap text-white/60 transition-colors hover:text-white aria-[current=true]:bg-white/10 aria-[current=true]:text-accent-300"
+              >
+                {link.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<style>
+  /* The nav scrolls horizontally on narrow screens; hide the bar itself. */
+  .scrollbar-none {
+    scrollbar-width: none;
+  }
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+</style>
+
+<script>
+  // Scroll-spy: highlight the link for whichever section owns the viewport.
+  // Replaces the old jQuery + waypoints.js pairing with ~20 lines of platform.
+  const links = Array.from(document.querySelectorAll('[data-nav-link]'));
+  const sections = links
+    .map((link) => document.querySelector(link.hash))
+    .filter((el) => el instanceof Element);
+
+  const setCurrent = (id) => {
+    links.forEach((link) =>
+      link.setAttribute('aria-current', String(link.hash === `#${id}`)),
+    );
+  };
+
+  if (sections.length) {
+    const visible = new Map();
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting)
+            visible.set(entry.target.id, entry.intersectionRatio);
+          else visible.delete(entry.target.id);
+        });
+
+        const top = [...visible.entries()].sort((a, b) => b[1] - a[1])[0];
+        if (top) setCurrent(top[0]);
+      },
+      { rootMargin: '-20% 0px -60% 0px', threshold: [0.1, 0.5, 1] },
+    );
+
+    sections.forEach((section) => observer.observe(section));
+  }
+
+  // Tighten the nav once the hero is behind it.
+  const nav = document.getElementById('site-nav');
+  const onScroll = () => {
+    const scrolled = window.scrollY > 80;
+    nav?.classList.toggle('scale-95', scrolled);
+    nav?.classList.toggle('glass-strong', scrolled);
+    nav?.classList.toggle('glass', !scrolled);
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+</script>

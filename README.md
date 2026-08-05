@@ -14,6 +14,19 @@ yarn dev
 
 El sitio corre en `http://localhost:4321/resume/`. El contenido (educación, empleos, habilidades, portafolio) se edita en [src/data/resumeData.json](src/data/resumeData.json) sin tocar código.
 
+## Estilos
+
+Todo el CSS es **Tailwind v4**, cargado con `@tailwindcss/vite`. No hay hojas de estilo propias en `public/`: los tokens (tipografía, paleta, radios) viven en el bloque `@theme` de [src/styles/global.css](src/styles/global.css).
+
+El lenguaje visual es _glass_: superficies translúcidas con `backdrop-filter`. Está encapsulado en dos utilidades declaradas con `@utility` en ese mismo archivo:
+
+- `glass` — superficie estándar (nav, tarjetas, chips, botones).
+- `glass-strong` — variante más densa para superficies sobre contenido cargado.
+
+Ambas incluyen un `@supports not (backdrop-filter: ...)` que cae a un relleno opaco, para que el texto siga siendo legible donde no haya soporte.
+
+Los iconos son SVG inline vía [astro-icon](https://www.astroicon.dev) (colecciones `fa6-brands` y `fa6-solid`), así que no hay fuentes de iconos que descargar.
+
 ## Protección de dependencias
 
 [.yarnrc.yml](.yarnrc.yml) define `npmMinimalAgeGate: 10080` (minutos = 7 días): Yarn rechaza cualquier versión publicada hace menos de una semana. Es la ventana en la que suelen detectarse publicaciones comprometidas o secuestros de cuentas, así que esperar 7 días mantiene esa clase de ataque fuera de las instalaciones.

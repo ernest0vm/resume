@@ -14,12 +14,17 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@tailwindcss/vite": "^4.3.3",
     "@tsparticles/engine": "^4.3.2",
     "@tsparticles/slim": "^4.3.2",
-    "astro": "^7.1.5"
+    "astro": "^7.1.5",
+    "tailwindcss": "^4.3.3"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
+    "@iconify-json/fa6-brands": "^1.2.6",
+    "@iconify-json/fa6-solid": "^1.2.4",
+    "astro-icon": "^1.1.5",
     "eslint": "^10.8.0",
     "eslint-plugin-astro": "^3.0.1",
     "husky": "^9.1.7",

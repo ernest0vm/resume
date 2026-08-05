@@ -1,0 +1,46 @@
+---
+import Section from './Section.astro';
+
+const { id, eyebrow, title, items = [] } = Astro.props;
+---
+
+<Section id={id} eyebrow={eyebrow} title={title}>
+  <ol class="relative space-y-5 sm:pl-8">
+    <!-- The rail the entries hang off; decorative, so hidden on small screens. -->
+    <span
+      class="absolute top-2 bottom-2 left-0 hidden w-px bg-gradient-to-b from-accent-400/50 via-white/10 to-transparent sm:block"
+      aria-hidden="true"></span>
+
+    {
+      items.map((item) => (
+        <li class="relative">
+          <span
+            class="absolute top-8 -left-8 hidden size-2.5 -translate-x-[4px] rounded-full bg-accent-400 ring-4 ring-accent-400/15 sm:block"
+            aria-hidden="true"
+          />
+
+          <article class="glass rounded-glass p-6 transition hover:-translate-y-0.5 sm:p-7">
+            <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+              <h3 class="text-lg font-semibold text-white">{item.heading}</h3>
+              {item.meta && (
+                <p class="text-xs font-semibold tracking-wider text-accent-400 uppercase">
+                  {item.meta}
+                </p>
+              )}
+            </div>
+
+            {item.subheading && (
+              <p class="mt-1 text-sm font-semibold text-white/70">
+                {item.subheading}
+              </p>
+            )}
+
+            {item.description && (
+              <p class="mt-4 text-sm/7 text-white/60">{item.description}</p>
+            )}
+          </article>
+        </li>
+      ))
+    }
+  </ol>
+</Section>

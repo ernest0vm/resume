@@ -21,19 +21,21 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v7
 
-      - name: Set up Node and Yarn
+      - name: Set up Node
         uses: actions/setup-node@v7
         with:
           node-version: 22
-          cache: yarn
+
+      - name: Enable Corepack
+        # Must run after setup-node so the shims land in the selected Node's
+        # bin dir, and before any yarn call — otherwise the runner's global
+        # yarn 1.x answers first and rejects the "packageManager" pin.
+        run: corepack enable
 
       - name: Install dependencies
-        # Corepack reads "packageManager" from package.json, so CI runs the
-        # same yarn 4.10.3 as local dev. --immutable fails if yarn.lock would
-        # change, which also means the npmMinimalAgeGate stays enforced.
-        run: |
-          corepack enable
-          yarn install --immutable
+        # --immutable fails if yarn.lock would change, which also means the
+        # npmMinimalAgeGate stays enforced in CI.
+        run: yarn install --immutable
 
       - name: Lint
         run: |

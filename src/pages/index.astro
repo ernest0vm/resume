@@ -1,19 +1,47 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
+import Nav from '../components/Nav.astro';
+import Hero from '../components/Hero.astro';
 import About from '../components/About.astro';
-import Resume from '../components/Resume.astro';
+import Timeline from '../components/Timeline.astro';
+import Skills from '../components/Skills.astro';
 import Portfolio from '../components/Portfolio.astro';
 import Footer from '../components/Footer.astro';
 import resumeData from '../data/resumeData.json';
+
+const { main, resume, portfolio } = resumeData;
+
+const education = (resume?.education ?? []).map((item) => ({
+  heading: item.school,
+  subheading: item.degree,
+  meta: item.graduated,
+  description: item.description,
+}));
+
+const work = (resume?.work ?? []).map((item) => ({
+  heading: item.company,
+  subheading: item.title,
+  meta: item.years,
+  description: item.description,
+}));
 ---
 
-<Layout>
-  <div class="App">
-    <Header data={resumeData.main} />
-    <About data={resumeData.main} />
-    <Resume data={resumeData.resume} />
-    <Portfolio data={resumeData.portfolio} />
-    <Footer />
-  </div>
+<Layout title={`${main.name} — ${main.description}`} description={main.bio}>
+  <Nav />
+
+  <main>
+    <Hero data={main} />
+    <About data={main} />
+    <Timeline
+      id="education"
+      eyebrow="Formación"
+      title="Educación"
+      items={education}
+    />
+    <Timeline id="work" eyebrow="Trayectoria" title="Empleos" items={work} />
+    <Skills data={resume} />
+    <Portfolio data={portfolio} />
+  </main>
+
+  <Footer data={main} />
 </Layout>

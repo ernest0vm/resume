@@ -1,18 +1,55 @@
 ---
+import { Icon } from 'astro-icon/components';
+
+const { data } = Astro.props;
+const networks = data?.social ?? [];
 const year = new Date().getFullYear();
+
+const brandIcons = {
+  facebook: 'fa6-brands:facebook-f',
+  twitter: 'fa6-brands:x-twitter',
+  linkedin: 'fa6-brands:linkedin-in',
+  behance: 'fa6-brands:behance',
+  github: 'fa6-brands:github',
+  whatsapp: 'fa6-brands:whatsapp',
+};
+
+const iconFor = (className = '') =>
+  brandIcons[className.replace(/^fab fa-/, '')] ?? 'fa6-solid:link';
 ---
 
-<footer>
-  <div class="row">
-    <div class="twelve columns">
-      <ul class="copyright">
-        <li>&copy; Copyright {year} Ernesto Valdez</li>
-      </ul>
-    </div>
-    <div id="go-top">
-      <a class="smoothscroll" title="Back to Top" href="#home">
-        <i class="icon-up-open"></i>
-      </a>
-    </div>
+<footer class="px-6 pt-10 pb-14">
+  <div
+    class="glass mx-auto flex max-w-5xl flex-col items-center gap-6 rounded-glass px-6 py-8 sm:flex-row sm:justify-between"
+  >
+    <p class="order-2 text-xs text-white/40 sm:order-1">
+      © {year} Ernesto Valdez
+    </p>
+
+    <ul class="order-1 flex items-center gap-2 sm:order-2">
+      {
+        networks.map((network) => (
+          <li>
+            <a
+              href={network.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={network.name}
+              class="flex size-9 items-center justify-center rounded-full text-white/50 transition hover:bg-white/10 hover:text-accent-300"
+            >
+              <Icon name={iconFor(network.className)} class="size-4" />
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+
+    <a
+      href="#home"
+      aria-label="Volver arriba"
+      class="order-3 flex size-9 items-center justify-center rounded-full text-white/50 transition hover:bg-white/10 hover:text-accent-300"
+    >
+      <Icon name="fa6-solid:chevron-up" class="size-4" />
+    </a>
   </div>
 </footer>

@@ -1,6 +1,10 @@
 ---
+import { Icon } from 'astro-icon/components';
+import Section from './Section.astro';
+
 const { data } = Astro.props;
 const base = import.meta.env.BASE_URL.replace(/\/+$/, '');
+
 const name = data?.name;
 const profilepic = `${base}/images/${data?.image}`;
 const bio = data?.bio;
@@ -9,44 +13,76 @@ const state = data?.address?.state;
 const phone = data?.phone;
 const email = data?.email;
 const resumeDownload = data?.resumedownload;
+
+const details = [
+  { icon: 'fa6-solid:user', label: name },
+  {
+    icon: 'fa6-solid:location-dot',
+    label: [city, state].filter(Boolean).join(', '),
+  },
+  {
+    icon: 'fa6-solid:phone',
+    label: phone,
+    href: `tel:${String(phone).replace(/\s/g, '')}`,
+  },
+  { icon: 'fa6-solid:envelope', label: email, href: `mailto:${email}` },
+];
 ---
 
-<section id="about">
-  <div class="row">
-    <div class="three columns">
-      <img class="profile-pic" src={profilepic} alt={`Foto de ${name}`} />
-    </div>
-    <div class="nine columns main-col">
-      <h2>Acerca de mi</h2>
-
-      <p>{bio}</p>
-      <div class="row">
-        <div class="columns contact-details">
-          <h2>Detalles de Contacto</h2>
-          <p class="address">
-            <i class="fa fa-user"></i>
-            <span>{name}</span>
-            <br />
-            <span>
-              <i class="fa fa-map-marker"></i>
-              {city}, {state}
-            </span>
-            <br />
-            <i class="fa fa-phone"></i>
-            <span>{phone}</span>
-            <br />
-            <i class="fa fa-envelope"></i>
-            <span>{email}</span>
-          </p>
-        </div>
-        <div class="columns download">
-          <p>
-            <a href={resumeDownload} target="_blank" class="button">
-              <i class="fa fa-download"></i>Descargar Curriculum
-            </a>
-          </p>
-        </div>
+<Section id="about" eyebrow="Acerca de mí" title="Perfil">
+  <div class="grid gap-10 md:grid-cols-[auto_1fr] md:gap-12">
+    <div class="mx-auto md:mx-0">
+      <div class="glass rounded-glass p-2">
+        <img
+          class="size-40 rounded-[calc(var(--radius-glass)-0.25rem)] object-cover sm:size-48"
+          src={profilepic}
+          alt={`Foto de ${name}`}
+          width="192"
+          height="192"
+          loading="lazy"
+        />
       </div>
     </div>
+
+    <div>
+      <p class="text-base/8 text-white/75">{bio}</p>
+
+      <ul class="mt-8 grid gap-3 sm:grid-cols-2">
+        {
+          details.map((detail) => (
+            <li>
+              <div class="glass flex items-center gap-3 rounded-2xl px-4 py-3">
+                <Icon
+                  name={detail.icon}
+                  class="size-4 shrink-0 text-accent-400"
+                />
+                {detail.href ? (
+                  <a
+                    href={detail.href}
+                    class="truncate text-sm text-white/80 hover:text-accent-300"
+                  >
+                    {detail.label}
+                  </a>
+                ) : (
+                  <span class="truncate text-sm text-white/80">
+                    {detail.label}
+                  </span>
+                )}
+              </div>
+            </li>
+          ))
+        }
+      </ul>
+
+      <a
+        href={resumeDownload}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="glass-strong mt-8 inline-flex items-center gap-2.5 rounded-full px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:text-accent-300"
+      >
+        <Icon name="fa6-solid:download" class="size-4" />
+        Descargar currículum
+      </a>
+    </div>
   </div>
-</section>
+</Section>

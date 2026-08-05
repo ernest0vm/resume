@@ -1,36 +1,55 @@
 ---
+import { Icon } from 'astro-icon/components';
+import Section from './Section.astro';
+
 const { data } = Astro.props;
 const projects = data?.projects ?? [];
 ---
 
-<section id="portfolio">
-  <div class="row">
-    <div class="twelve columns collapsed">
-      <h1>Conoce mi trabajo como desarrollador movil.</h1>
-
-      <div id="portfolio-wrapper" class="bgrid-quarters s-bgrid-thirds cf">
-        {
-          projects.map((project) => (
-            <div class="columns portfolio-item">
-              <div class="item-wrap">
-                <a href={project.url} title={project.title}>
-                  <img
-                    alt={project.title}
-                    src={project.image}
-                    style="width: 215px; height: 410px; object-fit: fill;"
-                  />
-                  <div class="overlay">
-                    <div class="portfolio-item-meta">
-                      <h5>{project.title}</h5>
-                      <p>{project.category}</p>
-                    </div>
-                  </div>
-                </a>
-              </div>
+<Section
+  id="portfolio"
+  eyebrow="Portafolio"
+  title="Trabajo como desarrollador móvil"
+  lead="Aplicaciones en producción y prototipos, en Flutter, React Native, Xamarin y Kotlin."
+>
+  <ul class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+    {
+      projects.map((project) => (
+        <li>
+          <a
+            href={project.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="glass group flex h-full flex-col overflow-hidden rounded-glass transition hover:-translate-y-1"
+          >
+            <div class="relative overflow-hidden bg-ink-900">
+              <img
+                src={project.image}
+                alt={project.title}
+                class="h-72 w-full object-cover object-top transition duration-500 group-hover:scale-105"
+                loading="lazy"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-ink-950 via-ink-950/20 to-transparent"
+                aria-hidden="true"
+              />
             </div>
-          ))
-        }
-      </div>
-    </div>
-  </div>
-</section>
+
+            <div class="flex flex-1 items-start justify-between gap-3 p-5">
+              <div>
+                <h3 class="text-sm font-semibold text-white group-hover:text-accent-300">
+                  {project.title}
+                </h3>
+                <p class="mt-1 text-xs text-white/50">{project.category}</p>
+              </div>
+              <Icon
+                name="fa6-solid:arrow-up-right-from-square"
+                class="mt-0.5 size-3.5 shrink-0 text-white/30 transition group-hover:text-accent-300"
+              />
+            </div>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</Section>

@@ -4,3 +4,6 @@ dist/
 
 # lockfiles
 yarn.lock
+
+# vendored third-party code, kept identical to upstream
+src/components/glassyui/

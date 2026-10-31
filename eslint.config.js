@@ -4,7 +4,14 @@ import betterTailwind from 'eslint-plugin-better-tailwindcss';
 
 export default [
   {
-    ignores: ['dist/', 'node_modules/', 'public/', '.astro/'],
+    ignores: [
+      'dist/',
+      'node_modules/',
+      'public/',
+      '.astro/',
+      // vendored third-party code, kept identical to upstream
+      'src/components/glassyui/',
+    ],
   },
   js.configs.recommended,
   ...eslintPluginAstro.configs.recommended,

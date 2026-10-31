@@ -1,5 +1,6 @@
 ---
 import { Icon } from 'astro-icon/components';
+import { GlassSurface } from './glassyui/glass-surface';
 import { useTranslations } from '../i18n/ui.js';
 
 const { data, locale = 'es' } = Astro.props;
@@ -45,11 +46,20 @@ const iconFor = (className = '') =>
               target="_blank"
               rel="noopener noreferrer"
               aria-label={network.name}
-              class="group glass flex size-11 items-center justify-center rounded-full text-white/70 transition hover:-translate-y-0.5 hover:text-accent-300 sm:size-12"
+              class="group relative flex size-11 items-center justify-center rounded-full text-white/70 transition hover:-translate-y-0.5 hover:text-accent-300 sm:size-12"
             >
+              {/* Trial: Glassy UI's lens as a React island. The surface is a
+                  visual layer behind the icon, so the link stays a plain,
+                  server-rendered <a> and only the glass hydrates. */}
+              <GlassSurface
+                client:visible
+                preset="control"
+                aria-hidden="true"
+                className="absolute inset-0 rounded-full"
+              />
               <Icon
                 name={iconFor(network.className)}
-                class="size-4.5 sm:size-5"
+                class="relative size-4.5 sm:size-5"
               />
             </a>
           </li>
